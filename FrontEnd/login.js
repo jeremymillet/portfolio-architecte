@@ -17,10 +17,14 @@ event.preventDefault();
     })
     .then(function (reponse){
         if (reponse.status === 200) {
-            window.location.href='index.html'
+            window.location.href='edit-page.html';
         }
         else{
-            console.log("Erreur dans l’identifiant ou le mot de passe")
+            const infolog = document.createElement("p")
+            infolog.innerText = "Erreur dans l’identifiant ou le mot de passe";
+            infolog.classList.add("infolog")
+            const connection = document.querySelector(".connection")
+            connection.appendChild(infolog)
         }
     });
     
