@@ -10,8 +10,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
 		rel="stylesheet">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="main.js"></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -27,6 +27,7 @@
 		</nav>
 	</header>
 	<main>
+
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
@@ -42,38 +43,37 @@
 					décorateur(trice)</p>
 			</article>
 		</section>
+
 		<section id="portfolio">
 			<h2>Mes Projets</h2>
 			<ul id="btn-list">
 				<li>
-					<button id="btn-all">Tous</button>
-				</li>
-				<li>
-					<button id="btn-objets">Objets</button>
-				</li>
-				<li>
-					<button id="btn-Appartements">Appartements</button>
-				</li>
-				<li>
-					<button id="btn-Htl-Res">Hotels & restaurants</button>
+					<button class="btn all">Tous</button>
 				</li>
 			</ul>
 			<div class="gallery">
 
+			</div>
 		</section>
+
+		<div id="info-container">
+			<p id="info"></p>
+		</div>
+
 		<section id="contact">
 			<h2>Contact</h2>
 			<p>Vous avez un projet ? Discutons-en !</p>
 			<form action="#" method="post">
 				<label for="name">Nom</label>
-				<input type="text" name="name" id="name">
+				<input type="text" name="name" id="Name">
 				<label for="email">Email</label>
-				<input type="email" name="email" id="email">
+				<input type="email" name="email" id="Email">
 				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
 				<input type="submit" value="Envoyer">
 			</form>
 		</section>
+
 	</main>
 
 	<footer>

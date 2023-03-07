@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
         rel="stylesheet">
     <meta name="description" content="">
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/edit-page.css">
-    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/edit-page.css">
+    <script type="module" src="js/edit-page.js"></script>
 </head>
 
 <body>
     <div id="edit-nav">
-        <div class="edit-mode">
+        <button class="open-modale">
             <img src="assets/icons/edit-img white.png" alt="">
             <p>Mode édition</p>
-        </div>
-        <button>publier les changements</button>
+        </button>
+        <button id="publish-edit">publier les changements</button>
     </div>
     <div id="content">
         <header>
@@ -30,7 +30,7 @@
                 <ul>
                     <li><a href="#portfolio">projets</a></li>
                     <li><a href="#contact">contact</a></li>
-                    <li><a href="index.html">logout</a></li>
+                    <li><a href="#" id="logout">logout</a></li>
                     <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
                 </ul>
             </nav>
@@ -39,6 +39,10 @@
             <section id="introduction">
                 <figure>
                     <img src="./assets/images/sophie-bluel.png" alt="">
+                    <div id="edit-introduction">
+                        <img src="assets/icons/Group.svg" alt="">
+                        <p>modifier</p>
+                    </div>
                 </figure>
                 <article>
                     <h2>Designer d'espace</h2>
@@ -52,28 +56,95 @@
                         décorateur(trice)</p>
                 </article>
             </section>
+            <p id="info-edit-page"></p>
             <section id="portfolio">
-                <div class="edit-mode">
+                <div class="title-project">
                     <h2>Mes Projets</h2>
-                    <img src="assets/icons/Group.svg" alt="">
-                    <p>modifier</p>
+                    <button class="open-modale">
+                        <img src="assets/icons/Group.svg" alt="">
+                        modifier
+                    </button>
+
                 </div>
                 <div class="gallery">
 
+                </div>
             </section>
+
             <section id="contact">
                 <h2>Contact</h2>
                 <p>Vous avez un projet ? Discutons-en !</p>
                 <form action="#" method="post">
                     <label for="name">Nom</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="Name">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="Email">
                     <label for="message">Message</label>
                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
                     <input type="submit" value="Envoyer">
                 </form>
             </section>
+
+            <section class="modale-container invisible">
+                <div class="overlay invisible"></div>
+                <section class="modale invisible">
+                    <header id="header-del-work">
+                        <button class="close-modale"><img src="assets/icons/croix.png" alt="croix"></button>
+                    </header>
+                    <main class="main-modale">
+                        <div class="work">
+                            <h2>Galerie photo</h2>
+                            <div id="work-to-delete">
+
+                            </div>
+                        </div>
+                        <p id="info-modale-delete"></p>
+                        <div id="modale-button">
+                            <button id="add">Ajouter une photo</button>
+                            <button id="delete">Supprimer la Gallery</button>
+                        </div>
+                    </main>
+                </section>
+
+                <section class="modale-add invisible">
+                    <header id="header-add-work">
+                        <button id="back-to-delete"><img src="assets/icons/Arrow_Back.png" alt="back"></button>
+                        <button class="close-modale"><img src="assets/icons/croix.png" alt="close"></button>
+                    </header>
+                    <div id="title-add">
+                        <p>Ajout photo</p>
+                    </div>
+                    <div id="form-container">
+                        <form id="form-add">
+                            <div class="form-container-image">
+                                <input id="input-img" type="file" accept=".jpg,.png" required="required">
+                                <div class="form-file-selected-info">
+                                    <img src="/assets/icons/picture-svgrepo-com.png" alt="">
+                                </div>
+                                <div class="form-file-placeholder">+ Ajouter photo</div>
+                                <p>jpg,png : 4mo max</p>
+                            </div>
+                            <p class="info-img"> </p>
+                            <label for="">Titre</label>
+                            <input type="text" class="input" id="work-name" required="required">
+                            <p class="info-text"></p>
+                            <label for="">Catégorie</label>
+                            <select id="category" class="input" required="required">
+                                <option selected value="nothing">-- Sélectionnez svp --</option>
+                                <option value="Objets">Objets</option>
+                                <option value="Appartements">Appartements</option>
+                                <option value="Hôtels & restaurants">Hôtels & restaurants</option>
+                            </select>
+                            <p class="info-category"></p>
+                            <div id="button-submit-add-container">
+                                <button type="submit" disabled="disabled" id="button-submit-add">Valider</button>
+                            </div>
+                            <p id="info-modale-add"></p>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
         </main>
         <footer>
             <nav>
@@ -82,6 +153,7 @@
                 </ul>
             </nav>
         </footer>
+
     </div>
 </body>
 
