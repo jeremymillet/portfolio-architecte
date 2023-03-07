@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="./assets/login-page.css">
-    <script type="module" src="login.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/login-page.css">
+    <script type="module" src="js/login.js"></script>
     <title>Login</title>
 </head>
 
@@ -22,22 +22,24 @@
             <ul>
                 <li><a href="index.html">projets</a></li>
                 <li><a href="index.html">contact</a></li>
-                <li><a class="actuel" href="login-page.html">login</a></li>
+                <li><a class="active" href="login-page.html">login</a></li>
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
     </header>
+
     <main class="main-login">
         <section class="section-login">
             <h2>Log In</h2>
             <form id="login">
                 <label for="name">E-mail</label>
-                <input id="email" type="email"></input>
+                <input id="email" type="email" required="required"></input>
                 <label for="name">Mot de passe</label>
-                <input id="password" type="password"></input>
+                <input id="password" type="password" required="required"></input>
                 <div class="connection">
                     <button id="submit" type="submit">Se connecter</button>
                     <a href="">Mot de passe oublié</a>
+                    <p id="info-error"></p>
                 </div>
             </form>
         </section>

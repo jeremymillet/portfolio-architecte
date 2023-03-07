@@ -1,0 +1,11 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "p3 Sophie Bluel",
+            "database": "C:\\Users\\jerem\\Documents\\portfolio-architecte\\Backend\\database.sqlite"
+        }
+    ]
+}
