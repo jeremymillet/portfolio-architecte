@@ -10,7 +10,7 @@ const formNotice = document.getElementById("login")
         const payload = JSON.stringify(userInfo);
         // Call the fetch function with all the necessary information
         try {
-            const response = await fetch("http://localhost:5678/api/users/login", {
+            const response = await fetch("https://back-p3-oc.onrender.com/api/users/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: payload
