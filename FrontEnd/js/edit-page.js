@@ -135,7 +135,7 @@ function sendNewWork(category, token) {
         // Calling the fetch function with all the necessary information.
 
         try {
-            const response = await fetch("http://localhost:5678/api/works", {
+            const response = await fetch("https://back-p3-oc.onrender.com/api/works", {
                 method: "POST",
                 headers: { "Authorization": `bearer ${token}`, "Cache-Control": "no-cache" },
                 body: formData
@@ -180,7 +180,7 @@ function deleteWork(token) {
             const id = workButton[i].dataset.id
             // Calling the fetch function with all the necessary information.
             try {
-                const response = await fetch(`http://localhost:5678/api/works/${id}`, {
+                const response = await fetch(`https://back-p3-oc.onrender.com/api/works/${id}`, {
                     method: "DELETE",
                     headers: { "Authorization": `bearer ${token}` },
 
@@ -270,7 +270,7 @@ function disableSubmit(disabled) {
 // Function to refresh the display after deletion or addition.
 async function reloadDisplay() {
     try {
-        const response = await fetch("http://localhost:5678/api/works")
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works")
         if (response.ok) {
             const token = localStorage.getItem('token')
             const tokenUsabled = JSON.parse(token)
@@ -311,8 +311,8 @@ function erreur(info, error) {
 // Process function.
 async function process() {
     try {
-        const response = await fetch("http://localhost:5678/api/works");
-        const askCategory = await fetch("http://localhost:5678/api/categories");
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works");
+        const askCategory = await fetch("https://back-p3-oc.onrender.com/api/categories");
         if (response.ok && askCategory.ok) {
             const article = await response.json();
             const category = await askCategory.json();
