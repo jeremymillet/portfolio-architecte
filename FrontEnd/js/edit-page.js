@@ -35,8 +35,6 @@ function generateArticleInTheModale(article) {
         const imageElement = document.createElement("img");
         imageElement.crossOrigin = "anonymous";
         imageElement.src = tabArticle.imageUrl;
-        const nomElement = document.createElement("figcaption");
-        nomElement.innerText = "éditer";
         const deleteBouton = document.createElement("button");
         deleteBouton.dataset.id = article[i].id;
         const deleteBoutonImg = document.createElement("img");
@@ -151,8 +149,8 @@ function sendNewWork(category, token) {
                 document.getElementsByClassName("form-file-placeholder")[0].classList.remove("invisible")
                 document.querySelector(".form-container-image p").classList.remove("invisible")
                 const infoDeleteModale = document.getElementById("info-modale-add")
-                infoDeleteModale.innerText = "ajout  réussi"
-                await setTimeout(function () {
+                infoDeleteModale.innerText = "ajout réussi"
+                setTimeout(function () {
                     infoDeleteModale.innerText = "";
                 }, 2000);
             }
@@ -291,7 +289,7 @@ async function reloadDisplay() {
 
 }
 
-async function erreur(info, error) {
+function erreur(info, error) {
     if (error.message === "Failed to fetch") {
         info.innerText = "Erreur API"
         setTimeout(function () {
