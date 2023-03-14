@@ -58,7 +58,7 @@ function buttonFilter(works) {
 async function process() {
     // Récupération des données depuis l'API
     try {
-        const response = await fetch("https://back-p3-oc.onrender.com/api/works")
+        const response = await fetch("https://back-p3-oc.onrender.com/works")
         if (response.ok) {
             const works = await response.json();
             generateArticle(works)
