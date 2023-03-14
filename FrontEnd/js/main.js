@@ -2,7 +2,7 @@
 function generateArticle(article) {
 
     for (let i = 0; i < article.length; i++) {
-        const tabArticle = article[i];
+        const accArticle = article[i];
         // Récupération de l'élément du DOM qui accueillera les fiches
         const sectionCards = document.getElementsByClassName("gallery")[0];
         // Création d’une balise dédiée à une image
@@ -11,9 +11,9 @@ function generateArticle(article) {
         // Création des balises 
         const imageElement = document.createElement("img");
         imageElement.crossOrigin = "anonymous";
-        imageElement.src = tabArticle.imageUrl;
+        imageElement.src = accArticle.imageUrl;
         const nomElement = document.createElement("figcaption");
-        nomElement.innerText = tabArticle.title;
+        nomElement.innerText = accArticle.title;
 
         // On rattache la balise article a la section Fiches
         sectionCards.appendChild(articleElement);
@@ -58,7 +58,7 @@ function buttonFilter(works) {
 async function process() {
     // Récupération des données depuis l'API
     try {
-        const response = await fetch("http://localhost:5678/api/works")
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works")
         if (response.ok) {
             const works = await response.json();
             generateArticle(works)

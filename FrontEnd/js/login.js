@@ -29,7 +29,7 @@ const formNotice = document.getElementById("login")
             const infoError = document.getElementById("info-error")
             infoError.innerText = error.message;
             infoError.classList.add("infolog")
-        }npm
+        }
 
 })
 
