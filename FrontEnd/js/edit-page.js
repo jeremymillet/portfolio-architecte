@@ -137,7 +137,7 @@ function sendNewWork(category, token) {
         try {
             const response = await fetch("https://back-p3-oc.onrender.com/api/works", {
                 method: "POST",
-                headers: { "Authorization": `bearer ${token}`, "Cache-Control": "no-cache" },
+                headers: { "Authorization": `bearer ${token}`},
                 body: formData
             });
             if (response.ok) {
