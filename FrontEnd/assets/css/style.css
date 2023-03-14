@@ -346,3 +346,55 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em;
 }
+
+@media (max-width:440px){
+	header {
+		max-width:auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+
+	body {
+		max-width: auto;
+		margin: auto;
+		font-family: 'Work Sans';
+		font-size: 14px;
+	
+	}
+	.gallery {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-column-gap: 0px;
+		grid-row-gap: 20px;
+	}
+	#btn-list {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.btn {
+		margin: 0px 5px;
+		padding: 5px 10px;
+		height: 37px;
+		border-radius: 60px;
+		border: 1px solid #1D6154;
+		color: #1D6154;
+		display: flex;
+		align-items: center;
+		font-family: 'Syne';
+		font-size: 10px;
+		transition: all 0.5s;
+	}
+	.btn:hover {
+		background: #1D6154;
+		color: white;
+		transform: none;
+		transition: all 0.5s;
+		cursor: pointer;
+	}
+	
+}
