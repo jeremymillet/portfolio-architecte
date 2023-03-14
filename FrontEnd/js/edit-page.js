@@ -133,10 +133,11 @@ function sendNewWork(category, token) {
 
 
         // Calling the fetch function with all the necessary information.
-
+        console.log(token)
         try {
             const response = await fetch("https://back-p3-oc.onrender.com/api/works", {
                 method: "POST",
+                type : "http",
                 headers: { "Authorization": `bearer ${token}`},
                 body: formData
             });
@@ -316,7 +317,7 @@ async function process() {
         if (response.ok && askCategory.ok) {
             const article = await response.json();
             const category = await askCategory.json();
-            const token = localStorage.getItem('token')
+            const tokenUsabled = localStorage.getItem('token')
             document.getElementById("input-img").addEventListener("change", (e) => {
                 readURL(e)
             });
@@ -325,7 +326,6 @@ async function process() {
                 alert("vous n'êtes pas connecté")
             }
             else {
-                const tokenUsabled = JSON.parse(token)
                 displayModal()
                 generateArticle(article)
                 generateArticleInTheModale(article)

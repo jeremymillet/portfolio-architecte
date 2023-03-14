@@ -18,8 +18,8 @@ const formNotice = document.getElementById("login")
             if (response.ok) {
                 const dataResponse = await response.json();
                 document.location.href = "edit-page.html"
-                localStorage.setItem('token', JSON.stringify(dataResponse.token))
-                localStorage.setItem('userId', JSON.stringify(dataResponse.userId))
+                localStorage.setItem('token', dataResponse.token)
+                localStorage.setItem('userId', dataResponse.userId)
             }
             else {
                 throw new Error("Erreur dans l’identifiant ou le mot de passe")
