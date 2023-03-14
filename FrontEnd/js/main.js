@@ -58,7 +58,7 @@ function buttonFilter(works) {
 async function process() {
     // Récupération des données depuis l'API
     try {
-        const response = await fetch("https://back-p3-oc.onrender.com/works")
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works")
         if (response.ok) {
             const works = await response.json();
             generateArticle(works)
@@ -69,10 +69,10 @@ async function process() {
 
     } catch (error) {
         if (error.message === "Failed to fetch") {
-           const test= document.getElementById("info")
-           test.innerText = "Erreur au chargement de l\'api"
+            const test = document.getElementById("info")
+            test.innerText = "Erreur au chargement de l\'api"
         }
-        else{
+        else {
             console.log(error.message)
         }
     }

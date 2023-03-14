@@ -135,7 +135,7 @@ function sendNewWork(category, token) {
         // Calling the fetch function with all the necessary information.
 
         try {
-            const response = await fetch("https://back-p3-oc.onrender.com/works", {
+            const response = await fetch("https://back-p3-oc.onrender.com/api/works", {
                 method: "POST",
                 headers: { "Authorization": `bearer ${token}`, "Cache-Control": "no-cache" },
                 body: formData
@@ -180,7 +180,7 @@ function deleteWork(token) {
             const id = workButton[i].dataset.id
             // Calling the fetch function with all the necessary information.
             try {
-                const response = await fetch(`https://back-p3-oc.onrender.com/works/${id}`, {
+                const response = await fetch(`https://back-p3-oc.onrender.com/api/works/${id}`, {
                     method: "DELETE",
                     headers: { "Authorization": `bearer ${token}` },
 
@@ -190,7 +190,7 @@ function deleteWork(token) {
                     reloadDisplay()
                     const infoDeleteModale = document.getElementById("info-modale-delete")
                     infoDeleteModale.innerText = "suppression réussi"
-                    setTimeout( () => {
+                    setTimeout(() => {
                         infoDeleteModale.innerText = "";
                     }, 2000);
 
@@ -218,26 +218,26 @@ function setSubmitButton() {
 
     function checkInputs() {
         const imgStatus = inputImg.value !== "";
-        if (imgStatus === false){
-            document.getElementsByClassName("info-img")[0].innerText ="valeur requise"
+        if (imgStatus === false) {
+            document.getElementsByClassName("info-img")[0].innerText = "valeur requise"
         }
         else {
-            document.getElementsByClassName("info-img")[0].innerText =""
+            document.getElementsByClassName("info-img")[0].innerText = ""
         }
         const nameStatus = /[a-zA-Z]+/.test(workName.value);
 
-        if (nameStatus === false){
-            document.getElementsByClassName("info-text")[0].innerText ="valeur requise"
+        if (nameStatus === false) {
+            document.getElementsByClassName("info-text")[0].innerText = "valeur requise"
         }
-        else{
-            document.getElementsByClassName("info-text")[0].innerText =""
+        else {
+            document.getElementsByClassName("info-text")[0].innerText = ""
         }
         const categoryStatus = category.value !== "nothing";
-        if (categoryStatus === false){
-            document.getElementsByClassName("info-category")[0].innerText ="valeur requise"
+        if (categoryStatus === false) {
+            document.getElementsByClassName("info-category")[0].innerText = "valeur requise"
         }
-        else{
-            document.getElementsByClassName("info-category")[0].innerText =""
+        else {
+            document.getElementsByClassName("info-category")[0].innerText = ""
         }
         return imgStatus && nameStatus && categoryStatus;
     }
@@ -246,7 +246,7 @@ function setSubmitButton() {
         const isDisabled = !checkInputs();
         disableSubmit(isDisabled);
     }
-    
+
     inputImg.addEventListener("input", handleInput);
     workName.addEventListener("input", handleInput);
     category.addEventListener("input", handleInput);
@@ -270,7 +270,7 @@ function disableSubmit(disabled) {
 // Function to refresh the display after deletion or addition.
 async function reloadDisplay() {
     try {
-        const response = await fetch("https://back-p3-oc.onrender.com/works")
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works")
         if (response.ok) {
             const token = localStorage.getItem('token')
             const tokenUsabled = JSON.parse(token)
@@ -311,7 +311,7 @@ function erreur(info, error) {
 // Process function.
 async function process() {
     try {
-        const response = await fetch("https://back-p3-oc.onrender.com/works");
+        const response = await fetch("https://back-p3-oc.onrender.com/api/works");
         const askCategory = await fetch("https://back-p3-oc.onrender.com/api/categories");
         if (response.ok && askCategory.ok) {
             const article = await response.json();
